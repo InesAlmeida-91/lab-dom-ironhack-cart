@@ -15,18 +15,20 @@ function calculateAll() {
   //const singleProduct = document.querySelector('.product');
   //updateSubtotal(singleProduct);
   // end of test
-
   // ITERATION 2
-  //find class name product
- const multipleProducts = document.getElementsByClassName('product')
- //console.log(multipleProducts) - array
- //multipleProducts.map(product => )
- //event click??
-
- //updateSubtotal(multipleProducts)
-
+  const multipleProducts = document.querySelectorAll('.product')
+  const multiply = multipleProducts.forEach(products => {
+    return updateSubtotal(products)
+})
   // ITERATION 3
-  //... your code goes here
+  //target subtotal class
+  const subTotalClass = document.querySelectorAll('.subtotal span');
+  const sumSubTotal = subTotalClass.forEach(subtotal => {
+  let totalValue = document.querySelector('#total-value span');
+  totalValue = totalValue.innerHTML + subtotal
+  return totalValue
+  })
+
 }
 
 // ITERATION 4
